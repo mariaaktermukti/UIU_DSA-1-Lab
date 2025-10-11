@@ -1,7 +1,7 @@
 #include <iostream> // for input/output
 using namespace std;
 
-// ---------------- Node Structure ----------------
+//Node Structure 
 struct node
 {
     int data;     // store node value
@@ -17,13 +17,13 @@ struct node
     }
 };
 
-// ---------------- BST Structure ----------------
+//BST Structure 
 struct binary_tree
 {
     node *root;                    // pointer to root node
     binary_tree() { root = NULL; } // constructor: tree empty
 
-    // ---------- Insert Function ----------
+    //Insert Function
     void insert(node *z)
     {
         node *y = NULL; // trailing parent pointer
@@ -45,7 +45,7 @@ struct binary_tree
             y->right = z; // attach right child
     }
 
-    // ---------- Search Function ----------
+    //Search Function
     node *search(int val)
     {
         node *temp = root; // start from root
@@ -59,7 +59,7 @@ struct binary_tree
         return temp; // return node or NULL
     }
 
-    // ---------- Minimum Function ----------
+    //Minimum Function
     node *tree_min(node *x)
     {
         while (x != NULL && x->left != NULL)
@@ -67,7 +67,7 @@ struct binary_tree
         return x;        // return smallest node
     }
 
-    // ---------- Inorder Traversal ----------
+    //Inorder Traversal
     void inorder(node *x)
     {
         if (x != NULL)
@@ -78,7 +78,7 @@ struct binary_tree
         }
     }
 
-    // ---------- Successor Function ----------
+    //Successor Function
     node *tree_successor(node *x)
     {
         if (x->right != NULL)
@@ -88,7 +88,7 @@ struct binary_tree
         return x->parent;  // return successor
     }
 
-    // ---------- Delete Function ----------
+    //Delete Function
     void tree_delete(node *x)
     {
         // Case 1: No child
@@ -120,7 +120,7 @@ struct binary_tree
         }
     }
 
-    // ---------- Height Function ----------
+    //Height Function
     int height(node *x)
     {
         if (x == NULL)
@@ -128,7 +128,7 @@ struct binary_tree
         return 1 + max(height(x->left), height(x->right)); // max height
     }
 
-    // ---------- Depth Function ----------
+    //Depth Function
     int depth(node *x)
     {
         if (x == root)
@@ -137,7 +137,7 @@ struct binary_tree
     }
 };
 
-// ---------------- Main Function ----------------
+//Main Function
 int main()
 {
     binary_tree bt;  // create BST
